@@ -1,4 +1,4 @@
-#indef VEC3_H
+#ifndef VEC3_H
 #define VEC3_H
 
 #include <cmath>
@@ -27,5 +27,23 @@ class vec3 {
           e[2] += v.e[2];
           return *this;
        }
-       
+
+       vec3& operator*=(double t) {
+           e[0] *= t;
+           e[1] *= t;
+           e[2] *= t;
+           return *this;
+       }
+
+       vec3& operator /=(double t) {
+           return *this *= 1/t;
+       }
+
+       double length() const {
+           return sqrt(length_squared());
+       }
+
+       double length_squared() const {
+           return e[0]*e[0] + e[1]*e[1] + e[2]*e[2];
+       }     
 };
