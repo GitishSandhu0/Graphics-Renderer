@@ -14,15 +14,6 @@ int main() {
         for (int i=0; i<img_width; i++) {
             auto pixel_color = color(double(i)/(img_width-1), double(j)/(img_height-1),0);
             write_color(std::cout, pixel_color);
-
-
-
-            
-
-
-
-
-
         }
     }
     std::clog << "\rDone.                            \n";
